@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import PropTypes from 'prop-types';
 
 const Formulario = ({ crearCita }) => {
   // Crear state
@@ -106,7 +107,7 @@ const Formulario = ({ crearCita }) => {
           onChange={actualizarState}
           value={hora}
         />
-        <label> Nombre Dueño</label>
+        <label> Sintomas</label>
         <textarea
           className='u-full-width'
           name='sintomas'
@@ -119,6 +120,10 @@ const Formulario = ({ crearCita }) => {
       </form>
     </Fragment>
   );
+};
+
+Formulario.propTypes = {
+  crearCita: PropTypes.func.isRequired,
 };
 
 export default Formulario;
